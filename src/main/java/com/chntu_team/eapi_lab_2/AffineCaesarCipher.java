@@ -48,7 +48,6 @@ public class AffineCaesarCipher {
 
             int newPos = (kInverse * (pos + n - b)) % n;
             char newC = alphabet.charAt(newPos);
-            System.out.println(newC + " - " + newPos);
             decryptedT.append(newC);
         }
 
