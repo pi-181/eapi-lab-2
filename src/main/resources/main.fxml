@@ -23,13 +23,13 @@
     </MenuBar>
    <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="5.0">
       <children>
-          <Label alignment="CENTER" contentDisplay="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="146.0" text="Ключ T" textAlignment="CENTER" />
+          <Label alignment="CENTER" contentDisplay="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="146.0" text="Ключ A" textAlignment="CENTER" />
           <Label alignment="CENTER" contentDisplay="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="146.0" text="Ключ B" textAlignment="CENTER" />
       </children>
    </HBox>
    <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="5.0">
       <children>
-          <TextField fx:id="keyTInput" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="137.0" text="3" />
+          <TextField fx:id="keyAInput" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="137.0" text="3" />
           <TextField fx:id="keyBInput" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="137.0" text="5" />
       </children>
    </HBox>

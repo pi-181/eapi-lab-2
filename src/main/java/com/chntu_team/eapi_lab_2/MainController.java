@@ -17,7 +17,7 @@ public class MainController {
     private final AffineCaesarCipher cipher = new AffineCaesarCipher();
 
     @FXML
-    private TextField keyTInput;
+    private TextField keyAInput;
     @FXML
     private TextField keyBInput;
     @FXML
@@ -36,7 +36,7 @@ public class MainController {
                 alphabetInput.getText(),
                 workInput.getText(),
                 Integer.parseInt(keyBInput.getText()),
-                Integer.parseInt(keyTInput.getText())
+                Integer.parseInt(keyAInput.getText())
         );
 
         resultInput.setText(decrypted);
@@ -51,7 +51,7 @@ public class MainController {
                 alphabetInput.getText(),
                 workInput.getText(),
                 Integer.parseInt(keyBInput.getText()),
-                Integer.parseInt(keyTInput.getText())
+                Integer.parseInt(keyAInput.getText())
         );
 
         resultInput.setText(encrypted);
@@ -87,14 +87,14 @@ public class MainController {
 
     @FXML
     public void initialize() {
-        keyTInput.textProperty().addListener(FxUtil.makeFilter(keyTInput, true, -1));
+        keyAInput.textProperty().addListener(FxUtil.makeFilter(keyAInput, true, -1));
         keyBInput.textProperty().addListener(FxUtil.makeFilter(keyBInput, true, -1));
     }
 
     private boolean checkInputLength() {
-        final String tText = keyTInput.getText();
-        if (tText.isEmpty()) {
-            showError("Ключ T не повинен бути пустим");
+        final String aText = keyAInput.getText();
+        if (aText.isEmpty()) {
+            showError("Ключ A не повинен бути пустим");
             return true;
         }
 
@@ -104,14 +104,14 @@ public class MainController {
             return true;
         }
 
-        if (alphabetInput.getText().isEmpty()) {
+        final String alphabet = alphabetInput.getText();
+        if (alphabet.isEmpty()) {
             showError("Алфавіт не повинен бути пустим");
             return true;
         }
 
-        final int t = Integer.parseInt(tText);
-        final int b = Integer.parseInt(bText);
-        if (NumberUtil.gcd(t,b) != 1) {
+        final int a = Integer.parseInt(aText);
+        if (NumberUtil.gcd(a, alphabet.length()) != 1) {
             showWarn("Найбільший спільний дільник НЕ дорівнює одиниці,\n" +
                     "таким чином неможливо гарантувати взаємно однозначне відображення");
         }

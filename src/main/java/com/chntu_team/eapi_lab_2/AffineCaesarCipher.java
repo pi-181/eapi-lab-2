@@ -5,7 +5,7 @@ import org.jetbrains.annotations.NotNull;
 public class AffineCaesarCipher {
 
     @NotNull
-    public String encrypt(@NotNull String alphabet, @NotNull String input, int b, int t) {
+    public String encrypt(@NotNull String alphabet, @NotNull String input, int a, int b) {
         final int n = alphabet.length();
 
         String text = input.toLowerCase();
@@ -20,7 +20,7 @@ public class AffineCaesarCipher {
                 continue;
             }
 
-            int newPos = (pos * t + b) % n;
+            int newPos = (pos * a + b) % n;
             char newC = alphabet.charAt(newPos);
             encryptedT.append(newC);
         }
@@ -29,10 +29,10 @@ public class AffineCaesarCipher {
     }
 
     @NotNull
-    public String decrypt(@NotNull String alphabet, @NotNull String input, int b, int t) {
+    public String decrypt(@NotNull String alphabet, @NotNull String input, int a, int b) {
         final int n = alphabet.length();
 
-        int kInverse = this.calcInverse(t, n);
+        int kInverse = this.calcInverse(a, n);
         String text = input.toLowerCase();
         StringBuilder decryptedT = new StringBuilder();
 
@@ -54,9 +54,9 @@ public class AffineCaesarCipher {
         return decryptedT.toString();
     }
 
-    private int calcInverse(int t, int n) {
+    private int calcInverse(int a, int n) {
         for (int i = 1; i < n; i++)
-            if ((t * i) % n == 1)
+            if ((a * i) % n == 1)
                 return i;
 
         return 1;
