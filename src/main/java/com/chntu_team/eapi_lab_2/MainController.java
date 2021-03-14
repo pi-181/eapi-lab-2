@@ -35,8 +35,8 @@ public class MainController {
         final String decrypted = cipher.decrypt(
                 alphabetInput.getText(),
                 workInput.getText(),
-                Integer.parseInt(keyBInput.getText()),
-                Integer.parseInt(keyAInput.getText())
+                Integer.parseInt(keyAInput.getText()),
+                Integer.parseInt(keyBInput.getText())
         );
 
         resultInput.setText(decrypted);
@@ -50,8 +50,8 @@ public class MainController {
         final String encrypted = cipher.encrypt(
                 alphabetInput.getText(),
                 workInput.getText(),
-                Integer.parseInt(keyBInput.getText()),
-                Integer.parseInt(keyAInput.getText())
+                Integer.parseInt(keyAInput.getText()),
+                Integer.parseInt(keyBInput.getText())
         );
 
         resultInput.setText(encrypted);
